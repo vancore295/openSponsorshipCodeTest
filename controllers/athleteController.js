@@ -14,5 +14,15 @@
             var newAthlete = new athlete(req.body);
             newAthlete.save();
         });
+
+        app.post("/api/updateathlete/:id", function(req, res) {
+            athlete.findByIdAndUpdate({ _id: id }, function(err, update) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.send(update);
+                }
+            })
+        })
     }
 })(module.exports);
