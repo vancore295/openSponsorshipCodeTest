@@ -1,0 +1,54 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Bootstrap Css -->
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+
+    <!--Core JavaScript-->
+    <script type="text/javascript" src="js\jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js\bootstrap\bootstrap.min.js"></script>
+    <script type="text/javascript" src="js\angular\angular.js"></script>
+    <script type="text/javascript" src="js\angular\angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="js\angular\angular-route.min.js"></script>
+    <script type="text/javascript" src="js\angular\angular-animate.min.js"></script>
+    <script type="text/javascript" src="js\angular-ui\ui-bootstrap-tpls-1.3.3.min.js"></script>
+
+    <!--App-->
+    <script type="text/javascript" src="app.js"></script>
+
+    <!--Controllers-->
+    <script type="text/javascript" src="js\controllers\homeController.js"></script>
+    <script type="text/javascript" src="js\controllers\addAthleteController.js"></script>
+    <script type="text/javascript" src="js\controllers\athleteListController.js"></script>
+
+    <!--Services-->
+    <script type="text/javascript" src="js\services\athleteservice.js"></script>
+    <script type="text/javascript" src="js\services\listservice.js"></script>
+
+
+    <title>Athlete Profile</title>
+</head>
+
+<body ng-app="athleteProfile">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="addAthlete">Athlete Profile</a>
+            </div>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a ui-sref="addAthlete">Add Athlete</a></li>
+                <li><a ui-sref="list">Athlete List</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div ui-view="">
+
+    </div>
+</body>
+
+</html>

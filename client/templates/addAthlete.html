@@ -1,0 +1,228 @@
+<div class="row">
+    <form name="addAthlete" class="col-md-10 col-md-offset-1" ng-if="Nationalities != null && Sports != null">
+        <fieldset>
+            <!-- Basic Info -->
+            <uib-accordion>
+                <uib-accordion-group is-open="accordionControl.basicInfo" panel-class="panel-primary">
+                    <uib-accordion-heading>
+                        <span class="pull-left" style="margin: 2px;"><i class="glyphicon" ng-class="{'glyphicon-chevron-down': accordionControl.basicInfo, 'glyphicon-chevron-right': !accordionControl.basicInfo }"></i></span> Personal Information
+                    </uib-accordion-heading>
+
+                    <div class="contrinaer-fluid">
+                        <div class="form-group">
+                            <div class="row form-row">
+                                <div class="col-sm-2">
+                                    <label class="sm-label" for="fname">First name</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="fname" ng-model="formData.firstName">
+                                </div>
+                            </div>
+
+                            <div class="row form-row">
+                                <div class="col-sm-2">
+                                    <label class="sm-label" for="lname">Last name</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="lname" ng-model="formData.lastName">
+                                </div>
+                            </div>
+
+                            <div class="row form-row">
+                                <div class="col-sm-2">
+                                    <label class="sm-label" for="dob">Date of birth</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="date" class="form-control" name="dob" ng-model="formData.date_of_birth">
+                                </div>
+                            </div>
+
+                            <div class="row form-row">
+                                <div class="col-sm-2">
+                                    <label class="sm-label" for="lname">Nation</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select class="form-control" ng-model="formData.nationality">
+                                        <option ng-repeat="nation in Nationalities.list" value="{{ nation }}">{{ nation }}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row form-row">
+                                <div class="col-sm-2">
+                                    <label class="sm-label" for="location">Location</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="location" ng-model="formData.location">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </uib-accordion-group>
+            </uib-accordion>
+            <!--Affiliations-->
+            <uib-accordion>
+                <uib-accordion-group is-open="accordionControl.Affiliations" panel-class="panel-primary">
+                    <uib-accordion-heading>
+                        <span class="pull-left" style="margin: 2px;"><i class="glyphicon" ng-class="{'glyphicon-chevron-down': accordionControl.Affiliations, 'glyphicon-chevron-right': !accordionControl.Affiliations }"></i></span> Affiliations
+                    </uib-accordion-heading>
+
+                    <div class="contrinaer-fluid">
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="Association">Association</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="Association" ng-model="formData.Association">
+                            </div>
+                        </div>
+
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="team">Team</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="team" ng-model="formData.team">
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="sports">Sports (multi select)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <select multiple class="form-control" names="sports" ng-model="formData.Sports">
+                                        <option ng-repeat="sport in Sports.list" value="{{ sport }}">{{ sport }}</option>
+                                    </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </uib-accordion-group>
+            </uib-accordion>
+            <!--Social Media-->
+            <uib-accordion>
+                <uib-accordion-group is-open="accordionControl.socialMedia" panel-class="panel-primary">
+                    <uib-accordion-heading>
+                        <span class="pull-left" style="margin: 2px;"><i class="glyphicon" ng-class="{'glyphicon-chevron-down': accordionControl.socialMedia, 'glyphicon-chevron-right': !accordionControl.socialMedia }"></i></span> Social Media
+                    </uib-accordion-heading>
+
+                    <div class="contrinaer-fluid">
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Facebook</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="location" ng-model="formData.Social_Media_Handles.Facebook">
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Twitter</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="location" ng-model="formData.Social_Media_Handles.Twitter">
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Youtube</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="Youtube" ng-model="formData.Social_Media_Handles.Youtube">
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Twitch</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="Twitch" ng-model="formData.Social_Media_Handles.Twitch">
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Snapchat</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="Snapchat" ng-model="formData.Social_Media_Handles.Snapchat">
+                            </div>
+                        </div>
+                    </div>
+                </uib-accordion-group>
+            </uib-accordion>
+
+            <uib-accordion>
+                <uib-accordion-group is-open="accordionControl.summary" panel-class="panel-primary">
+                    <uib-accordion-heading>
+                        <span class="pull-left" style="margin: 2px;"><i class="glyphicon" ng-class="{'glyphicon-chevron-down': accordionControl.summary, 'glyphicon-chevron-right': !accordionControl.summary }"></i></span> Personal
+                    </uib-accordion-heading>
+
+                    <div class="contrinaer-fluid">
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">About You</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <textarea rows="4" class="form-control" name="location" ng-model="formData.about"></textarea>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Interests (sperated by commas)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="Interests" ng-model="formData.Interests">
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Charities (sperated by commas)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="Charities" ng-model="formData.Charities">
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Pets (sperated by commas)</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="Pets" ng-model="formData.Pets">
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Drinks Alcohol</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                            <input type="radio" ng-model="formData.Drinks_Alcohol" ng-value="true" />Yes
+                                        </label>
+                                <label class="radio-inline">
+                                            <input type="radio" ng-model="formData.Drinks_Alcohol" ng-value="false" />No
+                                        </label>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-sm-2">
+                                <label class="sm-label" for="location">Married</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                            <input type="radio" ng-model="formData.Married" ng-value="true" />Yes
+                                        </label>
+                                <label class="radio-inline">
+                                            <input type="radio" ng-model="formData.Married" ng-value="false" />No
+                                        </label>
+                            </div>
+                        </div>
+                    </div>
+                </uib-accordion-group>
+            </uib-accordion>
+
+            <button type="button" class="btn btn-Danger" ng-click="Reset(formData)">Reset</button>
+            <button type="button" class="btn btn-success" ng-click="SaveAthlete(formData)">Save</button>
+        </fieldset>
+    </form>
+</div>
